@@ -1,0 +1,16 @@
+<% products.forEach(function(element){ %>
+    <form action="">
+        <img src="/test/<%= element.product_text %> " alt="<%= element.product_name %> ">
+        <p>Product Name</p>
+        <input type="text" placeholder="<%= element.product_name %> ">
+        <p>Product Price</p>
+        <input type="text" placeholder="<%= element.product_price %> ">
+        <p>Product Name</p>
+        <input type="text" placeholder="<%= element.product_text %> ">
+        <p>Product img</p>
+        <input type="file">
+        <button>Create Product</button>
+        
+    </form>
+    <p></p>
+<% }) %>

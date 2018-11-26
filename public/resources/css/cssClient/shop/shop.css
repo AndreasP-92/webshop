@@ -1,0 +1,167 @@
+.searchBox{
+    width:80%!important;
+    /* background-color:grey; */
+    /* height:200px; */
+    /* margin-top:20px; */
+    /* margin-left:-15px; */
+    margin: 20px auto;
+}
+/* .searchBox{
+    width:80%;
+} */
+/* ************************************************************************ MAIN ****************************************************************** */
+.shopMain{
+    width:90%;
+    display:block;
+    margin:auto;
+    padding-left:5%;
+    margin-bottom: 10px;
+}
+.shopMain:after{
+    content:"";
+    display:table;
+    clear: both;
+}
+.productMain{
+    float:left;
+    width:100%;
+}
+/* ************************************************************************ SEARCH ****************************************************************** */
+.search-banner{
+    background-color:#7a898c!important;
+}
+.searchTxt{
+    margin-right:10px;
+    width:15%;
+    float:left;
+}
+.searchTxt:after{
+    display:block;
+    content:"";
+    clear: both;
+}
+.searchTxt input{
+    width:80%;
+}
+.searchCheck{
+    float:left;
+}
+.selectBox select{
+    height:35px!important;
+    /* background-color:black; */
+}
+.selextDiv{
+    width:90%;
+    /* padding:auto; */
+}
+/* ************************************************************************ ALL PRODUCTS ****************************************************************** */
+
+.item{
+    float:left;
+    margin:auto;
+    display:block;
+}
+
+/* ********************************************************************** CATEGORY BUTTONS *************************************************************** */
+
+.categoryButtons{
+    text-decoration: none;      
+    list-style: none;
+    margin-top:115px!important;
+    margin: 20px;
+    border-radius: 4px;
+    width: 280px;
+    min-height: 430px;
+    float:left;
+    /* margin:auto; */
+    /* display:block; */
+    width:20%!important;
+    /* height:20px; */
+    /* float:left */
+    background-color:#7a898c!important;
+}
+.oneCategoryButton{
+    margin: 20px auto!important;
+    display:block!important;
+    width:60%;
+    text-align: center;
+    font-size:20px!important;
+    color:black;
+    text-decoration: none;
+    /* float:left; */
+}
+.oneCategoryButton a{
+    text-decoration: none;
+    color:white;
+}
+.oneCategoryButton a:hover{
+    text-decoration: none;
+}
+.pageNumber p, .pageNumber a{
+    float:left;
+    /* width:100%; */
+}
+.pageNumber{
+    margin:auto;
+    width:20%;
+    display:block;
+}
+/* ********************************************************************** PAGE BUTTONS *************************************************************** */
+
+.pageNext{
+    margin-left:5px;
+    border: 2px solid black;
+}
+.pageBack{
+    margin-right:5px;
+    border: 2px;
+    background-color:#7a898c;
+    color:white;
+
+}
+.pageNumbers{
+    margin-left:2px;
+    margin-right:2px;
+    border:2px solid black;
+    padding-left:5px;
+    padding-right:5px;
+    text-decoration: none!important;
+    background-color:#7a898c;
+    color:white
+}
+/* .productBox{
+    width:25%!important;
+    background-color:white;
+}
+.productImg{
+    width:100%;
+}
+productImg img{
+    width:80%;
+    display:block;
+    margin:auto;
+} */
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        /* background-color: #7a898c!important; */
+
+        /* background-color: black!important; */
+    }
+    .borderTopDiv{
+        margin-top:0px;
+    }
+    .mt-5, .py-5, .pb-5{
+        margin-top:0px!important;
+    }
+    .selextDiv{
+        width:100%!important;
+    }
+    .categoryButtons{
+        width:90%!important;
+    }
+    .item{
+        margin-left:33px!important;
+    }
+}

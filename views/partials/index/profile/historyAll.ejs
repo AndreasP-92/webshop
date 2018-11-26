@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/resources/css/cssClient/profile/history.css">
+
+<div class="col-md-12 profileInfo">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Order History</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+							<div class="mob">
+									<div class="container">
+										<div class="row">
+												<div class="history_wrap">
+													<% for(i = 0; i < product.length; i++){ %>
+														<div class="history_list">
+															<div class="history_item_name">
+								<!-- PRODUCTS -->
+															   <% product[i].name.forEach(function(elm){ %>
+																 <span class="item"><%= elm %></span>
+															   <% }) %>
+															</div>
+															<div class="history_rate">
+								<!-- DATE -->
+																 <span class="rate">
+																		<%= product[i].date %>
+																</span>
+															</div>
+															<div class="history_status">
+								<!-- STATUS -->
+																<span class="label label-success"><%= product[i].status %></span>
+								<!-- PRICE -->
+																<span class="history_total"><b>Total :</b> €<%= product[i].price %></span>
+															</div>
+														</div>
+														<% } %>
+												</div>
+										</div>
+									</div>
+								</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <script src="/resources/js/jsClient/profile/profileSettings.js"></script>
+
+
+

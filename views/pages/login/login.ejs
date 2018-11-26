@@ -1,0 +1,56 @@
+
+<!DOCTYPE ejs>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/resources/css/login/authenticateSystem.css">
+    <link rel="stylesheet" href="/resources/css/cssClient/profile.css">
+
+
+</head>
+<header class="indexHeader">
+    <% include ../.././partials/header %>
+
+</header>
+<body>
+    <div class="container">
+        <div class="card card-container">
+            <a href="/" class="forgot-password"><i class="fa fa-caret-left"></i> Back to Webside </a>
+            <h2 class="login-register-title" >Login</h2>
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method="post" action="/login"  id="registerForm">
+                <span id="reauth-email" class="reauth-email"></span>
+<!-- USERNAME -->
+				<input type="text" name="username" id="login__username" class="form-control input__field" placeholder="Username" required>
+                <div id="userValid"></div>		
+<!-- PASSWORD -->
+				<input type="password"  class="form-control input__field" id="password01" name="passphrase" placeholder="Password" required>
+				<div id="passwordValid"></div>							
+                <div id="remember" class="checkbox">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" id="submitButton" type="submit">Login</button>
+                <a href="/google/login">Sign in with Google+</a> <br>
+                <a href="/register">Sign Up</a> <br>
+                <a href="/forgot">Forgot Password?</a>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+<!-- SUCCESS ====================== -->
+    <div class="rigistrationSuccess" style="">
+        <h2>Validating</h2>
+    </div>
+	
+	
+</body>
+</html> 
+<script src="/resources/js/jsClient/login/login.js"></script>
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+
+

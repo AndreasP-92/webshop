@@ -1,0 +1,131 @@
+<div class="searchBox clearfix">
+        <form action="/shop/search" method="POST" style="text-align-last:center!important;">
+            <section class="search-banner text-white py-5 " id="search-banner">
+                <div class="container py-5 my-5 clearfix">
+                    <div class="row text-center pb-4">
+                        <div class="col-md-12">
+                            <h2>Find your New Set of Shoes</h2>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 selextDiv clearfix">
+                            <div class="card">
+                                <div class="card-body clearfix">
+                                    <div class="row clearfix">
+                                        <div class="col-md-2">
+<!-- GENDER =============================== -->
+
+                                            <div class="form-group selectBox clearfix">
+                                                <select id="inputState" name="gender" class="form-control">
+                                                    <option value="0" >-- Man / Woman -- </option>
+                                                    <option value="1"
+                                                    <% if(gender == 1){ %>
+                                                        selected
+                                                    <% } %>
+                                                    
+                                                    >Man</option>
+                                                    <option value="2"
+                                                    <% if(gender == 2){ %>
+                                                        selected
+                                                    <% } %>
+
+                                                        >Woman</option>
+                                                </select>
+                                            </div>
+                                        </div>
+<!-- CATEGORY =============================== -->
+
+                                        <div class="col-md-2 selextDiv clearfix" >
+                                            <div class="form-group selectBox">
+                                                <select id="inputState" name="category" class="form-control">
+                                                    <option selected value=""> -- Category -- </option>
+                                                    <% categories.forEach(function(elm){ %>
+                                                        <option value="<%= elm.category_id %>"
+                                                        <% if(category==elm.category_id){ %>
+                                                            selected
+                                                        <% } %>
+
+                                                            ><%= elm.category_name %>
+                                                        </option>
+                                                    <% }) %>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 selextDiv clearfix">
+                                            <div class="form-group selectBox">
+                                                <select id="inputState" class="form-control">
+                    
+
+                                                </select>
+                                            </div>
+                                        </div>
+<!-- PRICE =============================== -->
+
+                                        <div class="col-md-3 selextDiv clearfix">
+                                            <input type="text" class="form-control" name="price" placeholder="Search for Price"
+                                            <% if(price != ""){ %>
+                                                value="<%=price%>"
+                                            <% } %>
+                                            >
+                                            <br>
+
+                                        </div>
+<!-- TEXT =============================== -->
+                                        
+                                        <div class="col-md-3 selextDiv clearfix">
+                                            <input type="text" class="form-control" name="txt" placeholder="Search for Product" 
+                                            <% if(txt != ""){ %>
+                                                value="<%=txt%>"
+                                            <% } %>
+                                            >
+
+                                        </div>
+<!-- SEARCH =============================== -->
+                         
+                                        <div class="col-md-2 selextDiv clearfix" style="width:20%;">
+                                            <input type="submit" style="width:100%;" class="btn btn-dark" value="Search">
+                                            <!-- <button type="button" class="btn btn-dark">Search Car</button> -->
+
+                                        </div>
+                                        <% if(shopPageCheck == 'search'){ %>
+
+                                            <div class="col-md-2 selextDiv clearfix" >
+                                                <div class="form-group selectBox">
+                                                    <select id="inputState" name="productList" class="form-control"> 
+                                                        <option value="10"
+                                                        <% if (productList == 10){ %>
+                                                            selected
+                                                        <% } %>
+
+                                                        > Show 10 Products </option>
+                                                        <option value="20"
+                                                        <% if (productList == 20){ %>
+                                                            selected
+                                                        <% } %>
+
+                                                        > Show 20 Products </option>
+                                                        <option value="30"
+                                                        <% if (productList == 30){ %>
+                                                            selected
+                                                        <% } %>
+                                                        
+                                                        > Show 30 Products </option>
+                                                        <option value="40"
+                                                        <% if (productList == 40){ %>
+                                                            selected
+                                                        <% } %>
+                                                        > Show 40 Products </option>
+                                                    </select>                                                
+                                                </div>
+                                            </div>
+                                            
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>

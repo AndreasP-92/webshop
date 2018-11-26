@@ -1,0 +1,59 @@
+<div class="col-md-12 profileInfo">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Your Profile</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                <!-- ADRESS ---------- -->
+                    <div class="col-md-12">
+                        <form action="/JSON/post/shippingInfo" method="POST">
+                          <div class="form-group row">
+                            <label for="username" class="col-4 col-form-label">Adress</label> 
+                            <div class="col-8">
+                              <input id="username" name="adress" value="<%= user.shippinginfo_adress %>" class="form-control here" required="required" type="text">
+                            </div>
+                          </div>
+                <!-- ADRESS 2 ---------- -->
+                          <div class="form-group row">
+                            <label for="name" class="col-4 col-form-label">Address 2</label> 
+                            <div class="col-8">
+                              <input id="name" name="adress2" value="<%= user.shippinginfo_adress2 %>" class="form-control here" type="text">
+                            </div>
+                          </div>
+                <!-- ZIP CODE ---------- -->
+                          <div class="form-group row">
+                            <label for="lastname" class="col-4 col-form-label">Zip Code</label> 
+                            <div class="col-8">
+                              <input id="lastname" name="zip" value="<%= user.shippinginfo_zip %>" class="form-control here" type="text">
+                            </div>
+                          </div>
+                <!-- CITY ---------- -->
+                          <div class="form-group row">
+                            <label for="email" class="col-4 col-form-label">City</label> 
+                            <div class="col-8">
+                              <input id="email" name="city" value="<%= user.shippinginfo_city %>" class="form-control here" required="required" type="text">
+                            </div>
+                          </div>
+                <!-- COUNTRY ---------- -->
+                          <div class="form-group row">
+                            <label for="newpass" class="col-4 col-form-label">Country</label> 
+                            <div class="col-8">
+                              <input id="newpass" name="country" value="<%= user.shippinginfo_country %>" class="form-control here" type="text">
+                            </div>
+                          </div> 
+                <!-- SUBMIT ---------- -->
+                            <div class="offset-4 col-8">
+                              <button name="submit" type="submit" class="btn btn-primary">Update My Shipping Info</button>
+                            </div>
+                          </div>
+                         
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>

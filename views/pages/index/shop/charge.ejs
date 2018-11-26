@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <% include ../../.././partials/head %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="/resources/css/cssClient/profile.css">
+    <link rel="stylesheet" href="/resources/css/cssClient/shop/basket.css">
+    <title>Buy Shoes Dot Com</title>
+  </head>
+  <header class="indexHeader">
+    <% include ../../.././partials/header %>
+
+  </header>
+  <body>
+    <main style="min-height: 639px;">
+      <div class="borderTopDiv">
+        <div class="container">
+        </div>
+      </div>
+      <form action="/charge" method="POST" id="form">
+        <div class="mt-5"></div>
+        <section class="aboutus py-5" id="aboutus">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="card pb-5">
+                  <a href="/">Back</a>
+                  <h1 class="basketTitle">Thank You for Ordering</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+    <% include ../../.././partials/footer %>
+  </body>
+  <% include ../../.././partials/afterFooter %>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="/resources/js/jsClient/charge.js"></script>
+  <script src="/resources/js/shopMain.js"></script>
+  <script src="/resources/js/jsClient/responsiveNav.js"></script>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script>
+
+  </script>
+
+  </html>
+</body>
+
+</html>

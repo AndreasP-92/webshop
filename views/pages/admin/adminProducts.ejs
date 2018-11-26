@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- <% include ../.././partials/head %> -->
+                
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/cssAdmin/adminNav.css">
+    <link rel="stylesheet" href="/resources/css/cssAdmin/main.css">
+    <title>Buy Shoes Dot Com</title>
+</head>
+    <% include ../.././partials/admin/adminNav %>
+</header>
+<body>
+    <main>
+        <h1>Products</h1>
+
+        <div class="choosingProjects">
+            <a href="/admin/products/update/"> <button class="projectButtons"> <p> Show all Products </p></button> </a>
+            <a href="/admin/products/create"> <button class="projectButtons"><p> Create a Product </p></button> </a>
+            
+        </div>
+
+        <% if(productPageCheck == ""){ %>
+
+            <div style="margin-bottom: 250px;"></div>
+    
+        <% } else if(productPageCheck == "create"){ %>
+    
+            <% include ../.././partials/admin/products/createProduct %>
+                
+    
+        <% } else if(productPageCheck == "update"){ %>
+    
+            <% include ../.././partials/admin/products/updateProduct %>
+                    
+        
+        <% } %>
+    </main>
+</body>
+</html>
+<!-- <% include ../.././partials/afterFooter %> -->
+<script src="/resources/js/jsAdmin/dashboard.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+

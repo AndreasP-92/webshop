@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../../.././partials/head %>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/resources/css/cssClient/profile.css">
+  <link rel="stylesheet" href="/resources/css/cssClient/shop/basket.css">
+  <title>Buy Shoes Dot Com</title>
+</head>
+<header class="indexHeader">
+  <% include ../../.././partials/header %>
+
+</header>
+
+<body>
+  <main>
+    <div class="borderTopDiv">
+      <div class="container">
+      </div>
+
+      </div>
+    <!-- <form action="/checkout" id="form"> -->
+      <div class="mt-5"></div>
+      <section class="aboutus py-5" id="aboutus">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-9 shoppigCard">
+              <div class="card pb-5">
+                <h1 class="basketTitle">Shopping Cart</h1>
+
+                <div class="shopping-cart">
+
+                  <div class="column-labels">
+                    <label class="product-image">Image</label>
+                    <label class="product-details">Product</label>
+                    <label class="product-price">Price</label>
+                    <label class="product-quantity">Quantity</label>
+                    <label class="product-removal">Remove</label>
+                    <label class="product-line-price">Total</label>
+                  </div>
+<!-- DISPLAY PRODUCT ============== -->
+
+                  <div class="prepareProduct">
+
+                  </div>
+
+<!-- TOTAL PRICE ============== -->
+                  <div class="totals">
+                    <div class="totals-item">
+                      <label>Subtotal</label>
+                      <div class="totals-value" id="cart-subtotal">71.97</div>
+                    </div>
+                    <div class="totals-item">
+                      <label>Tax (5%)</label>
+                      <div class="totals-value" id="cart-tax">3.60</div>
+                    </div>
+                    <div class="totals-item">
+                      <label>Shipping</label>
+                      <div class="totals-value" id="cart-shipping">15.00</div>
+                    </div>
+                    <div class="totals-item totals-item-total">
+                      <label>Grand Total</label>
+                      <div class="totals-value" id="cart-total">90.57</div>
+                    </div>
+                  </div>
+                  <a href="/finish" class="checkout">Continue</a>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+      </section>
+
+
+
+  </main>
+<% include ../../.././partials/footer %>
+</body>
+<% include ../../.././partials/afterFooter %>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+<script src="/resources/js/jsClient/responsiveNav.js"></script>
+<script src="/resources/js/jsClient/shop/basket.js"></script>
+<script>
+
+  </script>
+
+</html>

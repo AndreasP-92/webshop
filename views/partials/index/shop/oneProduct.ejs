@@ -1,0 +1,216 @@
+<link rel="stylesheet" href="/resources/css/cssClient/shop/oneProduct.css">
+<link rel="stylesheet" href="/resources/css/cssClient/shop/shopRating.css">
+
+<main>
+    
+    <div class="stars"></div>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">
+                <%= product[0].product_name %>
+            </h1>
+            <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500...</p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+<!-- Image =========== -->
+            <div class="col-12 col-lg-6">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <a href="" data-toggle="modal" data-target="#productModal">
+                            <img class="img-fluid" src="/resources/media/shop/<%= product[0].product_img %>" alt="<%= product[0].product_name %>" />
+                            <p class="text-center">Zoom</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+<!-- Add to cart =================== -->
+            <div class="col-12 col-lg-6 add_to_cart_block">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+<!-- PRICE ======================== --> 
+                        <% if (product[0].product_sale_active == 1) { %>
+                            <p class="price">
+                                <%= product[0].product_sale_price %> €
+                            </p>
+                            <p class="price_discounted">
+                                <%= product[0].product_price %> €
+                            </p>
+                        <% } else { %>
+                            <p class="price" style="color:black;">
+                                <%= product[0].product_price %> €
+                            </p>
+                        <% } %>
+<!-- SELECT COLOUR ================== -->
+                        <form action="">
+                            <div class="form-group">
+                                <label for="colors">Color</label>
+                                <select class="custom-select colour-to-cart " name="color" id="colors">
+                                <!-- COLOR =================== -->
+                                    <option>Select</option>
+                                    <option value="1">Blue</option>
+                                    <option value="2">Red</option>
+                                    <option value="3">Green</option>
+                                </select>
+                                <div class="afterColour"></div>
+                            </div>
+<!-- GUANTITY ============ -->
+                                <div class="form-group">
+                                    <label>Quantity :</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="" onClick="removeFromCart()">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control count-to-cart" id="quantity" name="quantity" min="1" max="100" value="1">
+                                        <div class="input-group-append">
+                                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" onClick="">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+<!-- ADD TO BASKET ================== -->
+                                <button class="btn btn-success btn-lg btn-block text-uppercase add-to-cart" data-img="<%= product[0].product_img %>" data-text="<%= product[0].product_text %>" data-name="<%= product[0].product_name %>" data-id="<%= product[0].product_id %>"
+                                        <% if(product[0].product_sale_active == 1){ %>
+                                            data-price=" <%= product[0].product_sale_price %>"
+                                    <% } else { %>   
+                                            data-price="<%= product[0].product_price %>"
+                                    <% } %>
+                                    >
+                                    <i class="fa fa-shopping-cart"></i> Add To Cart                                    
+                                </button>
+                            </form action="">
+                            <div class="product_rassurance">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-truck fa-2x"></i>
+                                        <br/>Fast delivery</li>
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-credit-card fa-2x"></i>
+                                        <br/>Secure payment</li>
+                                    <li class="list-inline-item">
+                                        <i class="fa fa-phone fa-2x"></i>
+                                        <br/>+ 45 12 14 15 16</li>
+                                </ul>
+                            </div>
+                            <div class="reviews_product p-3 mb-2 ">
+<!-- REVIEW ============================= -->
+                                <%= reviewCount[0].review_product %> reviews
+                                    <div class="stars-outer">
+                                        <div id="star" class="star stars-inner" data-rating="<%= overallRating %>"></div>
+                                    </div>
+                                    <% if (overallRating == overallRating){ %>
+                                        (<%= overallRating %>/5)
+                                    <% } else{ %>
+                                            (0/5)
+                                    <% } %>
+                                        <a class="pull-right" href="#reviews">View all reviews</a>
+                            </div>
+                            <div class="datasheet p-3 mb-2 bg-info text-white">
+                                <a href="" class="text-white">
+                                    <i class="fa fa-file-text"></i> Download DataSheet</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+<!-- DESCRIPTION ============================== -->
+            <div class="col-12">
+                <div class="card border-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase">
+                        <i class="fa fa-align-justify"></i> Description</div>
+                    <div class="card-body">
+                        <!-- INCOMMING TEXT -->
+                    </div>
+                </div>
+            </div>
+
+<!-- REVIEWS ================================= -->
+
+            <div class="col-12" id="reviews">
+                <div class="card border-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase">
+                        <i class="fa fa-comment"></i> Reviews <br> Log in to submit a rewview</div>
+                    <div class="card-body">
+                        <% review.forEach(function(review){ %>                        
+                        <div class="review">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            <meta itemprop="datePublished" content="01-01-2016"><%= review.review_date %>
+
+                            <div class="stars-outer">
+                                <div id="star" class="star stars-inner" data-rating="<%= review.review_vote %>"></div>
+                            </div>
+                      
+                            <p><%= review.review_author %></p>
+                            <p class="blockquote">
+                                <p class="mb-0"><%= review.review_text %></p>
+                            </p>
+                            <hr>
+                        </div>
+                        <% }) %>       
+<!-- SUBMIT REVIEW ============== -->
+                        <% if(username != undefined){ %>
+                        <div class="review">
+                           <form action="/shop/review/<%= product[0].product_id %>" method="POST">
+                                <div class="form-group row">
+                                    <label for="rate" class="col-4 col-form-label" aria-required="true">Rate the Product with stars</label> 
+                                    <div class="col-8">
+                                        <select name="rate" id="" required="required">
+                                            <option value="">-- Select --</option>
+                                            <option value="1">1 star</option>
+                                            <option value="2">2 stars</option>
+                                            <option value="3">3 stars</option>
+                                            <option value="4">4 stars</option>
+                                            <option value="5">5 stars</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="review" class="col-4 col-form-label">Submit Your Review</label> 
+                                    <div class="col-8">
+                                        <textarea id="review" name="review" rows="5" value="" class="form-control here" required="required" type="text"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="offset-4 col-8">
+                                        <input type="submit" id="submitReview" value="Submit">
+
+                                    </div>
+                                </div>
+                           </form>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+<!-- Modal image ================== -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid" src="/resources/media/shop/<%= product[0].product_img %>" alt="<%= product[0].product_name %>" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

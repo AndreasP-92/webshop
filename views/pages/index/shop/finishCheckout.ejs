@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../../.././partials/head %>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/resources/css/cssClient/profile.css">
+  <link rel="stylesheet" href="/resources/css/cssClient/shop/basket.css">
+  <title>Buy Shoes Dot Com</title>
+</head>
+<header class="indexHeader">
+  <% include ../../.././partials/header %>
+
+</header>
+
+<body>
+  <main>
+    <div class="borderTopDiv">
+      <div class="container">
+      </div>
+
+      </div>
+    <form action="/charge" method="POST" id="form">
+      <div class="mt-5"></div>
+      <section class="aboutus py-5" id="aboutus">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-9 shoppigCard">
+                <div class="card pb-5">
+                    <div class="col-md-12 profileInfo">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a href="/checkout">Back</a>
+                                        <h4 class="basketTitle">Almost Done</h1>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Visa test card: 4242424242424242</p>
+                                        <p>date: Any date</p>
+                                        <p>CVC: Any</p>
+                                        <div id="hiddenInfo">
+
+                                          </div>
+                                          <input type="hidden" id="stripeToken" name="stripeToken" />
+                                          <input type="hidden" id="stripeEmail" name="stripeEmail" />
+                <!-- PAYMENT FORM ----------- -->
+                                        
+<!-- LOGGED IN ============ -->
+                                            
+                                      <% if(username != ""){ %>
+                                        <form action="">
+                <!-- FIRSTNAME ----------- -->
+                                          <div class="form-group row">
+                                            <label for="firstname" class="col-4 col-form-label">First Name *</label> 
+                                            <div class="col-8">
+                                              <input id="name" name="firstname" id="name" value="<%= profile.profile_firstname %>" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                <!-- LAST NAME ----------- -->
+                                          <div class="form-group row">
+                                            <label for="name" class="col-4 col-form-label">Last Name *</label> 
+                                            <div class="col-8">
+                                              <input id="lastname" name="lastname" value="<%= profile.profile_lastname %>" class="form-control here" required="required"  type="text">
+                                            </div>
+                                          </div>
+                <!-- EMAIL ----------- -->
+                                          <div class="form-group row">
+                                            <label for="mail" class="col-4 col-form-label">Email *</label> 
+                                            <div class="col-8">
+                                              <input name="mail" value="<%= profile.profile_mail %>" class="form-control here" id="mailVal" required type="email">
+                                            </div>
+                                          </div>
+                <!-- ADRESS ----------- -->
+                                          <div class="form-group row">
+                                            <label for="adress" class="col-4 col-form-label">Adress *</label> 
+                                            <div class="col-8">
+                                              <input id="adress" name="adress" value="<%= info.shippinginfo_adress %>" class="form-control here" required type="text">
+                                            </div>
+                                          </div>
+                <!-- ADRESS 2 ----------- -->
+                                          <div class="form-group row">
+                                            <label for="adress2" class="col-4 col-form-label">Adress 2</label> 
+                                            <div class="col-8">
+                                              <input id="adress2" name="adress2" value="<%= info.shippinginfo_adress2 %>" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                <!-- CITY ----------- -->
+                                          <div class="form-group row">
+                                            <label for="city" class="col-4 col-form-label">City *</label> 
+                                            <div class="col-8">
+                                              <input id="city" name="city" value="<%= info.shippinginfo_city %>" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                <!-- ZIP ----------- -->
+                                          <div class="form-group row">
+                                            <label for="zip" class="col-4 col-form-label">Zip Code *</label> 
+                                            <div class="col-8">
+                                              <input id="zip" name="zip" value="<%= info.shippinginfo_zip %>" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                <!-- COUNTRY ----------- -->
+                                          <div class="form-group row">
+                                            <label for="country" class="col-4 col-form-label">Country *</label> 
+                                            <div class="col-8">
+                                              <input id="country" name="country" value="<%= info.shippinginfo_country %>" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                <!-- PHONE ----------- -->
+                                          <div class="form-group row">
+                                            <label for="phone" class="col-4 col-form-label">Phone *</label> 
+                                            <div class="col-8">
+                                              <input id="phone" name="phone" value="<%= info.shippinginfo_phone %>" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                <!-- VALIDATE DIV ----------- -->
+                                          <div class="form-group row">
+                                            <div class="offset-4 col-8">
+                                              <div id="validate"></div>
+                                            </div>
+                                          </div>
+                <!-- SUBMIT ----------- -->
+                                          <div class="form-group row">
+                                              <div class="offset-4 col-8">
+                                                <input type="submit" id="checkoutButton" class="checkout" onclick="stripe()" value="checkout">
+
+                                              </div>
+                                            </div>
+                                        </form>
+<!-- NOT LOGGED IN ============ -->
+                                          <% } else { %>
+                                            <form action="">
+                        <!-- FIRSTNAME ----------- -->
+                                            <div class="form-group row">
+                                                <label for="firstname" class="col-4 col-form-label">First Name *</label> 
+                                                <div class="col-8">
+                                                  <input id="name" name="firstname" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- LAST NAME ----------- -->
+                                              <div class="form-group row">
+                                                <label for="name" class="col-4 col-form-label">Last Name *</label> 
+                                                <div class="col-8">
+                                                  <input id="lastname" name="lastname" placeholder="" class="form-control here" required="required"  type="text">
+                                                </div>
+                                              </div>
+                            <!-- EMAIL ----------- -->
+                                              <div class="form-group row">
+                                                <label for="mail" class="col-4 col-form-label">E-mail *</label> 
+                                                <div class="col-8">
+                                                  <input name="mail" placeholder="" class="form-control here" id="mailVal" required="required" type="email">
+                                                </div>
+                                              </div>
+                            <!-- ADRESS ----------- -->
+                                              <div class="form-group row">
+                                                <label for="adress" class="col-4 col-form-label">Adress *</label> 
+                                                <div class="col-8">
+                                                  <input id="adress" name="adress" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- ADRESS 2 ----------- -->
+                                              <div class="form-group row">
+                                                <label for="adress2" class="col-4 col-form-label">Adress 2</label> 
+                                                <div class="col-8">
+                                                  <input id="adress2" name="adress2" placeholder="" class="form-control here" type="text">
+                                                </div>
+                                              </div>
+                            <!-- CITY ----------- -->
+                                              <div class="form-group row">
+                                                <label for="city" class="col-4 col-form-label">City *</label> 
+                                                <div class="col-8">
+                                                  <input id="city" name="city" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- ZIP ----------- -->
+                                              <div class="form-group row">
+                                                <label for="zip" class="col-4 col-form-label">Zip Code *</label> 
+                                                <div class="col-8">
+                                                  <input id="zip" name="zip" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- COUNTRY ----------- -->
+                                              <div class="form-group row">
+                                                <label for="country" class="col-4 col-form-label">Country *</label> 
+                                                <div class="col-8">
+                                                  <input id="country" name="country" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- PHONE ----------- -->
+                                              <div class="form-group row">
+                                                <label for="phone" class="col-4 col-form-label">Phone *</label> 
+                                                <div class="col-8">
+                                                  <input id="phone" name="phone" placeholder="" class="form-control here" required="required" type="text">
+                                                </div>
+                                              </div>
+                            <!-- VALIDATE DIV ----------- -->
+                                              <div class="form-group row">
+                                                  <div class="offset-4 col-8">
+                                                    <div id="validate"></div>
+  
+                                                  </div>
+                                                </div>
+                            <!-- SUBMIT ----------- -->
+                                              <div class="form-group row">
+                                                <div class="offset-4 col-8">
+                                                  <input type="submit" id="checkoutButton" class="checkout" onclick="stripe();" value="checkout">
+
+                                                </div>
+                                              </div>
+                                            </form>
+                                          <% } %>            
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                
+                </div>
+            </div>
+           </div>
+        </div>
+      </section>
+    </form>
+
+
+
+  </main>
+<% include ../../.././partials/footer %>
+</body>
+
+<% include ../../.././partials/afterFooter %>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- CLIENT -->
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+<script src="/resources/js/jsClient/shop/test.js"></script>
+<script src="/resources/js/jsClient/responsiveNav.js"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../../.././partials/head %>
+
+    <title>Buy Shoes Dot Com</title>
+</head>
+<header class="indexHeader">
+    <link rel="stylesheet" href="/resources/css/cssClient/shop/oneProduct.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/resources/css/cssClient/shop/shop.css">
+
+    <% include ../../.././partials/header %>
+</header>
+
+<body>
+    <% if(shopPageCheck == "allCategories"){ %>
+
+        <% include ../../.././partials/index/shop/search %>
+        <% include ../../.././partials/index/shop/allProducts %>
+
+    <% } else if(shopPageCheck == "oneProduct"){ %>
+
+        <% include ../../.././partials/index/shop/oneProduct %>
+
+    <% } else if(shopPageCheck == "search"){ %>
+
+        <% include ../../.././partials/index/shop/search %>
+        <% include ../../.././partials/index/shop/allProducts %>
+
+    <% } %>
+
+    <% include ../../.././partials/footer %>
+</body>
+
+
+</html>
+<% include ../../.././partials/afterFooter %>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+<!-- CLIENT -->
+<script src="/resources/js/jsClient/shop/shopRating.js"></script>
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+<script src="/resources/js/jsClient/responsiveNav.js"></script>

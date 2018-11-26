@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../.././partials/head %>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'> -->
+  <!-- <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.css'><link rel='stylesheet prefetch' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'> -->
+  <!-- <style class="cp-pen-styles">@import url("//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"); -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/resources/css/cssClient/indexShowcase.css">
+  <link rel="stylesheet" href="/modules/fullpage/fullpage.css">
+  <title>Buy Shoes Dot Com</title>
+</head>
+
+<body>
+  <header id="header">
+    <% include ../.././partials/header %>
+  </header>
+  <div id="fullpage">
+<!-- FIRST SECTION - HEADER -->
+    <div class="section indexContainer" id="section0">
+      <div class="indexContainerText">
+        <h1>Perfect-Shoes.com</h1>
+        <p>The Pretties Shoes on the Market</p>
+      </div>
+    </div>
+
+<!-- SECCOND SECTION - MEN SHOES -->
+
+    <div class="section" id="section1">
+      <div class="group group-three" id="scrollMen">
+        <div class="group--container">
+          <div class="group--title" data-aos="zoom-out-up" data-aos-offset="500">
+            <h2>Newest Men Shoes Added to our Collection</h2>
+            <div class="group--subtitle">
+              If the Shoe Fits Hover It.
+            </div>
+          </div>
+          <% for(i = 0; i < menShoes.length; i++){ %>
+
+          <div class="card--style2 card--one" id="manShoe<%= i %>" data-aos="fade-up">
+            <div class="shoe--info">
+              <span class="shoe--name">
+      <!-- SHOE NAME -->
+                <%= menShoes[i].product_name %>
+              </span>
+              <span class="shoe--price">
+      <!-- SHOE PRICE -->
+                €
+                <%= menShoes[i].product_price %>
+              </span>
+            </div>
+      <!-- SHOE IMAGE -->
+            <div class="shoe">
+              <a href="/product/<%= menShoes[i].product_id %>">
+                <img src="/resources/media/shop/<%= menShoes[i].product_img %>" alt="<%= menShoes[i].product_name %>" />
+              </a>
+            </div>
+            <div class="shoe--colors">
+              <ul class="colors">
+                <li data-color="#F5624D"></li>
+                <li data-color="#CC231E" class="active-color"></li>
+                <li data-color="#34A65F"></li>
+              </ul>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+<!--THIRD SECTION - WOMEN SHOES --------------- -->
+
+    <div class="section" id="section2">
+      <div class="group group-two" id="womanCard">
+        <div class="group--container">
+          <div class="group--title">
+            <h2>Newest Women Shoes Added to our Collection</h2>
+            <div class="group--subtitle">
+              A sample card UI layout.
+            </div>
+          </div>
+
+          <% for(i = 0; i < womenShoes.length; i++){ %>
+          <div class="card womanShoe<%= i %>" data-aos="fade-left">
+            <div class="shoe">
+              <div class="shoe--info">
+        <!-- SHOE NAME -->
+                <span class="shoe--name">
+                  <%= womenShoes[i].product_name %></span>
+        <!-- SHOE PRICE -->
+                <span class="shoe--price"> €
+                  <%= womenShoes[i].product_price %> </span>
+              </div>
+        <!-- SHOE IMAGE -->
+              <a href="/product/<%= womenShoes[i].product_id %>">
+                <img src="/resources/media/shop/<%= womenShoes[i].product_img %>" alt="<%= womenShoes[i].product_name %>" />
+              </a>
+              <div class="shoe--colors">
+                <ul class="colors">
+                  <li data-color="#F5624D"></li>
+                  <li data-color="#CC231E" class="active-color"></li>
+                  <li data-color="#34A65F"></li>
+                </ul>
+                <a href="/product/<%= womenShoes[i].product_id %>" class="buy-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="section3" style="background-color:#343a40;">
+      <% include ../.././partials/footer %>
+    </div>
+</body>
+<% include ../.././partials/afterFooter %>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<!-- FULLPAGE MODULE -->
+<script src="/modules/fullpage/fullpage.js"></script>
+<script src="/modules/fullpage/fullpage.extensions.min.js"></script>
+<script src='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'></script>
+<!-- CLIENT -->
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+<script src="/resources/js/jsClient/indexShowcase.js"></script>
+<script src="/resources/js/jsClient/responsiveNav.js"></script>
+
+</html>

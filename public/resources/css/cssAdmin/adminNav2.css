@@ -1,0 +1,243 @@
+*
+{
+    margin:0px;
+    padding:0px;
+}
+ul.navbar 
+{
+    background:#4a7746!important;
+    list-style-type: none!important;
+    margin: 0px!important;
+    padding: 0px!important;
+
+}
+.navbar > li > a i
+{
+    margin-right: 10px!important;
+    width: 40px!important;
+    padding: 10px!important;
+    box-sizing: border-box!important;
+}
+.navbar > li > a:hover,.navbar > li.active > a
+{
+    background: #335230!important;
+}
+.navbar > li > a
+{
+    display: block!important;
+    color: #fff!important;
+    text-decoration: none!important;
+    font-size: 18px!important;
+    padding: 10px!important;
+}
+.brand
+{
+    background: #3e523d!important;
+    color:#fff!important;
+    float: left!important;
+    width: 100%!important;
+    box-sizing: border-box!important;
+    padding:18px 10px!important; 
+    font-size: 25px!important;
+}
+
+.brand a:hover
+{
+    background: #444!important;
+}
+.brand a i
+{
+    
+}
+.brand a
+{
+    padding: 5px 10px!important;
+    float: right!important;
+    box-sizing: border-box!important;
+    color: #fff!important;
+    background: #4a7746!important;
+}
+.hideNav
+{
+   
+    visibility: hidden!important;
+}
+
+@media screen and (min-width: 768px) {
+   
+    ul.navbar {
+       height: 100vh!important;
+        width: 80px!important;
+    }
+    ul.navbar li span
+    {
+        visibility: hidden!important;
+    }
+    ul.navbar li a i
+    {
+        font-size: 30px!important;
+        padding-top: 22px!important;
+        
+        vertical-align: middle!important;
+    }
+    ul.navbar li
+    {
+        text-align: center!important;
+    }
+    .btn-bars
+    {
+        visibility: visible!important;
+    }
+}
+ @media screen and (min-width: 768px) {
+    .brand
+    {
+        padding-right: 10px!important;
+        background: #3e523d!important;
+        color:#fff!important;
+        width: 16.666%!important;
+     }
+    
+    ul.navbar {
+        width: 16.666%!important;
+    }
+       ul.navbar.hideNav
+     {
+        width: 100px!important;
+        visibility: visible!important;
+     }
+      ul.navbar.hideNav {
+       height: 100vh!important;
+        width: 80px!important;
+    }
+    ul.navbar.hideNav li span
+    {
+        visibility: hidden!important;
+    }
+    ul.navbar.hideNav li a i
+    {
+        font-size: 30px!important;
+        padding-top: 22px!important;
+        
+        vertical-align: middle!important;
+    }
+    ul.navbar.hideNav li
+    {
+        text-align: center!important;
+    }
+   
+    ul.navbar.hideNav li span
+    {
+        text-align: left!important;
+        visibility: visible!important;
+    }
+     ul.navbar li span
+    {
+        text-align: left!important;
+        visibility: visible!important;
+    }
+      ul.navbar li a i
+    {
+        font-size: 18px!important;
+        padding-top: 0px!important;
+        vertical-align: baseline!important;
+    }
+    ul.navbar li a 
+    {
+        padding-top: 22px!important;
+        font-size: 18px!important;
+        
+    }
+    ul.navbar li
+    {
+        text-align: left!important;
+    }
+}
+.header
+{
+    height: 70.48px!important;
+    width: 100%!important;
+    background: #163c12!important;
+}
+.header-right ul
+{
+    list-style-type: none!important;
+    margin: 0px;padding:0px!important;
+}
+.header-right
+{
+    width: 83.3333%!important;
+    float: left!important;
+}
+.header-right input
+{
+    margin: 15px!important;
+    padding: 10px!important;
+    width: 400px!important;
+    border-radius:5px!important;
+    border:0px!important;
+    outline: none!important;
+}
+
+.header-right ul.navbar-right
+{
+    position: absolute!important;
+    right: 10px!important;
+    top: 60px!important;
+    margin-top: 20px!important;
+    box-shadow: 0px 0px 3px 1px #ddd!important;
+    width:200px!important;
+}   
+.header-right ul.navbar-right li.active,
+.header-right ul.navbar-right li:hover
+{
+    
+    background: #f4f4f4!important;
+}
+.header-right ul.navbar-right li a i
+{
+    box-sizing: border-box!important;
+    padding: 10px!important;
+}
+.header-right ul.navbar-right li a
+{
+    text-decoration: none!important;
+    padding: 10px 10px!important;
+    display: block!important;
+    color: #333!important;
+}
+.blog-user
+{
+    float: right!important;
+}
+.blog-user a.avator img 
+{
+    float: right!important;
+}
+.avator 
+{   
+    height: 55px!important;
+    width: 55px!important;
+    margin-top: 5px!important;
+    margin-right: 15px!important;
+    float: right!important;
+    
+}
+.avator img
+{
+    border-radius: 100px!important;
+   height: 90%!important;
+    border:4px solid #fff!important; 
+}
+
+.header-right ul.navbar-right li
+{
+    z-index: 9999!important;            
+    border-bottom: 1px solid #e1e1e1!important;
+    background: #fff!important;
+    
+}
+.hidden
+{
+    visibility: hidden!important;
+}

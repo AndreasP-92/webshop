@@ -1,0 +1,20 @@
+.mob {width:400px; padding:10px;}
+.history_wrap{width:100%; float:left; height:auto; padding:10px;}
+.history_list{float:left; width:55%; margin:10px 0px; box-shadow:0 0 3px #aaa;}
+.history_item_name{float:left; width:70%; padding:0px 10px; }
+.history_item_name span.item{width:100%;float:left;}
+.history_rate{float:left; width:30%; text-align:right; padding:0 10px;}
+.history_status{float:left; width:100%;border-top:1px solid rgba(0,0,0,0.2);padding:5px 10px;}
+.history_status .label{float:left;}
+.history_total{float:right;}
+/* .profileCard{background-color:white; width:100%;} */
+.aboutus{
+    min-height: 639px;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        /* background-color: lightblue; */
+    }
+    .history_list{float:left; width:83%; margin:10px 0px; box-shadow:0 0 3px #aaa;}
+
+}

@@ -1,0 +1,142 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/resources/css/cssClient/shop/allProducts.css">
+<div class="shopMain">
+
+    <!-- PRODUCTS ================================= -->
+
+    <div class="productMain clearfix">
+
+<!-- PAGE CHANGE ================================= -->
+        
+        <div class="pageNumber clearfix">
+                <%if (shopPageCheck != 'search')  { %>
+                    <!-- <p class="pageBack"> Pages : </p> -->
+                    <!-- <a href="" class="pageBack">Back </a> -->
+                    <% var number = 1 %>
+        
+                    <% for(i = 0; i <= productCount.length; i++){ %>
+                    
+                        <% if(i% 11 == 0){ %>
+                            <% if( genderId != 0){ %>
+                                <a class="pageNumbers" href='/shop/<%= productCount[0].fk_gender %>/<%= i %>'>
+                                <%= number++ %></a>
+                    
+                            <% } else { %>
+                                <a class="pageNumbers" href="/shop/0/<%= i %>">
+                            <%= number++ %></a>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                    <!-- <a href="" class="pageNext"> Next</a> -->
+                <% } %>
+        </div>
+
+<!-- CATEGPRIES ================================= -->
+
+        <%if (shopPageCheck != 'search')  { %>
+
+        <div class="categoryButtons clearfix">
+            <div class="oneCategoryButton clearfix btn btn-dark">
+                <a href="/shop/0/0">All Categories</a>
+
+            </div>
+            <div class="oneCategoryButton clearfix btn btn-dark">
+                <a href="/shop/1/0">Mens Ware</a>
+
+            </div>
+            <div class="oneCategoryButton clearfix btn btn-dark">
+                <a href="/shop/2/0">Womans Ware</a>
+
+            </div>
+        </div>
+        <% } %>
+
+
+        <% allProducts.forEach(function(shoe){ %>
+
+        <div class="block item clearfix">
+            <div class="top">
+                <ul>
+                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                    <li><span class="converse">
+                            <%= shoe.product_name %></span></li>
+<!-- SET ITEM TO BASKET -->
+                    <li><a href="#" class="" data-name="<%= shoe.product_name %>" 
+                            <% if(shoe.product_sale_active != 0){%>
+                                    data-price="<%= shoe.product_sale_price %>"
+                            <% } else { %>   
+                                    data-price="<%= shoe.product_price %>"
+                            <% } %>
+                        ><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="middle">
+                <a href="/product/<%= shoe.product_id %>">
+                    <img src="/resources/media/shop/<%= shoe.product_img %>" alt="<%= shoe.product_name %>" />
+                </a>
+            </div>
+
+            <div class="bottom">
+                <div class="heading">
+                    <%= shoe.product_text %>
+                </div>
+                <div class="info">Neon converse edition</div>
+                <div class="style">Color: Teal/Navy/White / Style: 151116C</div>
+
+                <% if(shoe.product_sale_active != 0){%>
+                <div class="price">
+                    <p> New Price: €
+                        <%= shoe.product_sale_price %>
+                    </p>
+                    <span class="old-price">Before €
+                        <%= shoe.product_price %></span>
+                </div>
+                <% } else { %>
+                <div class="price">
+                    <p>€
+                        <%= shoe.product_price %>
+                    </p>
+
+                    <span class="old-price"></span>
+                </div>
+                <% } %>
+
+            </div>
+
+        </div>
+        <% }) %>
+
+    </div>
+
+<!-- PAGE CHANGE ================================= -->
+
+    <div class="pageNumber clearfix">
+            <%if (shopPageCheck != 'search')  { %>
+                <!-- <p class="pageBack"> Pages : </p> -->
+                <!-- <a href="" class="pageBack">Back </a> -->
+                <% var number = 1 %>
+    
+                <% for(i = 0; i <= productCount.length; i++){ %>
+                
+                    <% if(i% 11 == 0){ %>
+                        <% if( genderId != 0){ %>
+                            <a class="pageNumbers" href='/shop/<%= productCount[0].fk_gender %>/<%= i %>'>
+                            <%= number++ %></a>
+                
+                        <% } else { %>
+                            <a class="pageNumbers" href="/shop/0/<%= i %>">
+                        <%= number++ %></a>
+                        <% } %>
+                    <% } %>
+                <% } %>
+                <!-- <a href="" class="pageNext"> Next</a> -->
+            <% } %>
+    </div>
+
+</div>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+

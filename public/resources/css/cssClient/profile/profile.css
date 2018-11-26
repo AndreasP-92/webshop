@@ -1,0 +1,30 @@
+.list-group-item{
+    color:black;
+}
+#wrapper{
+    margin-top:50px!important;
+    width:75%;
+    margin: auto;
+}
+main{
+    background-color: #7a898c;
+}
+.profileInfo{
+    /* margin-top:25px!important; */
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #7a898c!important;
+
+        /* background-color: black!important; */
+    }
+    main{
+        width:100%;
+        margin-top:-57px!important;
+    }
+    #wrapper{
+        width:100%;
+    }
+}

@@ -1,0 +1,68 @@
+
+<!DOCTYPE ejs>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/resources/css/login/authenticateSystem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+<header class="indexHeader">
+    <% include ../.././partials/header %>
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div class="card card-container">
+            <h2 class="login-register-title">Registration</h2>            
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method="post" action="/user/post" id="registerForm" encType="multipart/form-data">
+<!-- USERNAME ===================== -->
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="username" id="login__username" class="form-control input__field" placeholder="Username" required>
+                <div id="userValid" class="valid"></div>			
+<!-- PASSWORD ===================== -->
+				<input type="password"  class="form-control input__field" id="password01" name="passphrase" placeholder="Password" required>
+				<div id="passwordValid" class="valid"></div>							
+                <input type="password"  class="form-control input__field" id="password02" placeholder="Repeat Password" required>
+<!-- NAME ===================== -->
+                <div id="name_valid" class="valid"></div>							
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="name" id="name" class="form-control input__field" placeholder="Name" required>
+<!-- NAME ===================== -->
+                <div id="lastname_valid" class="valid"></div>							
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="lastname" id="lastname" class="form-control input__field" placeholder="Last Name" required>
+<!-- EMAIL ===================== -->
+                <div id="email_valid" class="valid"></div>							
+                <input type="email"  name="email" class="form-control input__field" id="email" placeholder="E-mail" required>
+<!-- IMAGE OPLOAD ===================== -->
+                <div id="file_valid" class="valid"></div>
+                <input type="file" name="sampleFile" id="file" class="form-control input__field">							
+                <!-- <div id="remember" class="checkbox">
+
+                </div> -->
+                <button class="btn btn-lg btn-primary btn-block btn-signin" id="submitButton" type="submit">Register</button>
+            </form><!-- /form -->
+            <a href="/" class=""><i class="fa fa-close"></i> Cancel Registration </a>
+            
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+<!-- SUCCESS ====================== -->
+    <div class="rigistrationSuccess" style="">
+        <h2>Registration has been success</h2>
+    </div>
+	
+	
+</body>
+</html>
+<script src="/resources/js/jsClient/login/register.js"></script>
+<script src="/resources/js/jsClient/shop/shopMain.js"></script>
+
+

@@ -1,0 +1,60 @@
+@import './passport.css';
+
+form button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.form__inputGroup {
+	margin-bottom: 1em;
+}
+
+/* Style for the default label */
+.form__inputGroup .input__label {
+	display: block;
+	font-size: 75%;
+	color: var(--colorPrimaryForeground);
+}
+
+/* Style for a label in success-mode */
+.form__inputGroup .input__label--success {
+	color: var(--colorSuccess);
+}
+
+/* Style for a label in warning-mode */
+.form__inputGroup .input__label--warning {
+	color: var(--colorWarning);
+}
+
+/* Style for default input field */
+.form__inputGroup .input__field {
+	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	border: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--colorPrimaryForeground);
+	box-sizing: content-box;
+	transition: border-bottom-width 100ms ease;
+}
+
+.form__inputGroup .input__field:focus {
+	border-bottom-width: 3px;
+	outline: -webkit-focus-ring-color none;
+}
+
+.form__inputGroup .input__field:invalid {
+	box-shadow: none;
+}
+
+/* Style for default input field */
+.form__inputGroup .input__field--success {
+	border-bottom-color: var(--colorSuccess);
+}
+
+/* Style for default input field */
+.form__inputGroup .input__field--warning {
+	border-bottom-color: var(--colorWarning);
+}
